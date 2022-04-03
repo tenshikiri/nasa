@@ -1,21 +1,11 @@
-# Nasa
+To start this program:
+* run asdf install
+* install dependencies with mix deps.get
+* run iex -S mix
 
-**TODO: Add description**
+To calculate the total fuel needed for a spacecraft's flight path we need to run in iex:
 
-## Installation
+iex>Nasa.calculate_fuel(5000, [{:launch, 9.807},{:land, 1.62},{:launch, 1.62}, {:land, 9.807}])
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `nasa` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:nasa, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/nasa>.
-
+where 5000 is the weight of the space craft, followed by the launch or land action it takes in sequence, along with the
+gravity for each celestial body the action will take place. For example, {:launch, 9.807} means that the craft will launch from Earth.
